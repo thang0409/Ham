@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <label for>Sản phẩm</label>
+        <input type="text" class="product" />
+        <button class="btn">Add</button>
+        <ul class="list"></ul>
+
+        <script>
+            let input = document.querySelector('.product');
+            let btn = document.querySelector('.btn');
+            let list = document.querySelector('.list');
+
+
+            function render(value) {
+                let li = document.createElement('li');
+                li.innerHTML = `
+            ${value}
+            <button class="delete-btn" onclick="handleDelete(event)">Xóa</button>
+            <button onclick="handleUpdate(event)">Sửa</button>
+            `;
+                list.appendChild(li);
+            }
+
+            function handleAdd() {
+                let value = input.value;
+                render(value);
+                input.value = '';
+                input.focus();
+            }
+
+            function handleDelete(e) {
+                list.removeChild(e.target.parentElement);
+            }
+
+            function handleUpdate(e) {
+                let li = e.target.parentElement;
+                console.log(li)
+                let currentName = li.childNodes[0].nodeValue.trim(); 
+                console.log(currentName);
+                
+
+                let newName = prompt('Nhập tên mới cho sản phẩm:', currentName); 
+                if (newName) {
+                    li.childNodes[0].nodeValue = newName + ' '; 
+                }
+            }
+            btn.addEventListener('click', handleAdd);
+        </script>
+    </body>
+</html>
