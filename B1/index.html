@@ -6,29 +6,36 @@
         <title>Document</title>
     </head>
     <body>
+
+        <p class="result"></p>
         <script>
-            let prime = +prompt('Nhập số cần kiểm tra : ');
+            let result = document.querySelector('.result')
 
-            function isPrime(num) {
-                let isPrime = true;
-                if (num < 2) {
-                    alert(num + 'không là số nguyên tố');
-                    return;
-                }
-
-                for (let i = 2; i <= Math.sqrt(num); i++) {
-                    if (num % i === 0) {
-                        isPrime = false;
-                        alert(num + ' không là số nguyên tố');
-                        return;
-                    }
-                }
-                if (isPrime) {
-                    alert(num + ' là số nguyên tố');
-                }
+          const primeNum = +prompt("Nhập vào số nguyên tố muốn hiển thị")
+          function checkIsPrime(n) {
+            if(n < 2){
+                return false
             }
+            for (let i = 2; i <= Math.sqrt(n) ; i++) {
+                if(n % i === 0){
+                    return false
+                }
+                
+            }
+            return true
+          }
 
-            isPrime(prime);
+          function printPrime() {
+           for (let i = 0; i <= primeNum; i++) {
+            if(checkIsPrime(i)){
+                document.write(i,'<br>')
+                
+            }
+            
+           }
+          }
+          printPrime()
+            
         </script>
     </body>
 </html>

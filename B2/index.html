@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <label for> Nhập vào feet:</label>
+        <input type="text" name id="feet"><br>
+
+        <label for> Nhập vào met:</label>
+        <input type="text" name id="met"><br>
+        <button class="convert">Convert</button>
+        <p class="result"></p>
+
+        <script>
+        let feet = document.getElementById('feet')
+        let met = document.getElementById('met')
+        let btnConvert = document.querySelector('.convert')
+        let result = document.querySelector('.result')
+
+        function feetToMet() {
+            let value = Number(feet.value)
+            let met = 0.305 * value
+            result.innerHTML = `${value} feet = ${met} met`
+        }
+
+           function metToFeet() {
+            let value = Number(met.value)
+            let feet = 3.279 * value
+            result.innerHTML = `${value} met = ${feet} feet`
+        }
+
+        btnConvert.addEventListener('click', () => {
+              if (feet.value) {
+                feetToMet();
+            } else if (met.value) {
+                metToFeet();
+            } else {
+                result.innerHTML = 'Vui lòng nhập giá trị feet hoặc met';
+            }
+        })
+    </script>
+    </body>
+</html>
