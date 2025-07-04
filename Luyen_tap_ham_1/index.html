@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Bài 1
+            function alertMessage() {
+                alert('Xin chào');
+            }
+
+            //Bài 2
+            function count(a) {
+                a++;
+                return a;
+            }
+
+            // Bài 3
+            function compare(a, b) {
+                if (a > b) {
+                    alert(a + 'lớn hơn' + b);
+                } else {
+                    let sum = a + b;
+                    alert('Tổng hai số ' + sum);
+                }
+            }
+
+            // Bài 4
+
+            function addNumbers() {
+                firstNum = 4;
+                secondNum = 8;
+                result = firstNum + secondNum;
+                return result;
+            }
+
+            result = 0;
+            alert('Giá trị result trước khi gọi hàm: ' + result);
+            result = addNumbers();
+
+            alert('Giá trị result sau khi gọi hàm: ' + result);
+
+            // Bài 5
+            let stars = [
+                'Polaris',
+                'Aldebaran',
+                'Deneb',
+                'Vega',
+                'Altair',
+                'Dubhe',
+                'Regulus'
+            ];
+
+            let constellations = [
+                'Ursa Minor',
+                'Taurus',
+                'Cygnus',
+                'Lyra',
+                'Aquila',
+                'Ursa Major',
+                'Leo'
+            ];
+
+            function searchStart(str) {
+                for (let i = 0; i < stars.length; i++) {
+                    if (stars[i] === str) {
+
+                        return constellations[i];
+                    }
+                }
+                return `Không tìm thấy chòm sao tương ứng`;
+            }
+
+            let start = prompt('Nhập ngôi sao cần tìm');
+        </script>
+    </body>
+</html>
