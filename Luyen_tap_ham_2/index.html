@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // Bài 1
+            function square(num) {
+                return num * num;
+            }
+
+            // Bài 2
+            function circle(r) {
+                let pi = 3.14;
+                let c = 2 * pi * r;
+                let s = pi * r * r;
+                return {
+                    c: c,
+                    s: s
+                };
+            }
+
+            // Bài 3
+            function factorial(num) {
+                let factorial = 1;
+                for (let i = 1; i <= num; i++) {
+                    factorial *= i;
+                }
+                return factorial;
+            }
+
+            // Bài 4
+            function checkNumber(num) {
+                if (typeof num === 'number') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // Bài 5
+            function minNum(a, b, c) {
+                let min = a;
+                if (b < min) {
+                    min = b;
+                }
+                if (c < min) {
+                    min = c;
+                }
+                return min;
+            }
+
+            // Bài 6
+
+            function intNum(num) {
+                if (num > 0) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            // Bài 7
+            function changePlace(a, b) {
+                let arr = [];
+                arr.push(a);
+                arr.push(b);
+
+                let result = arr.reverse().join('');
+                return Number(result);
+            }
+
+            // Bài 8
+            function reverseArr(arr) {
+                return arr.reverse();
+            }
+
+            // Bài 9
+            function checkWord(arr, str) {
+                let count = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] === str) {
+                        count++;
+                    }
+                }
+                if (count === 0) {
+                    return -1; 
+                }
+
+                return {
+                    str: str,
+                    count: count
+                };
+            }
+
+            console.log(checkWord(['a', 'b', 'c'], 'a'));
+        </script>
+    </body>
+</html>
